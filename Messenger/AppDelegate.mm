@@ -496,6 +496,13 @@ static void __attribute__((constructor))_init() {
       bundleInfo[@"GitRev"],
       mainJSURLString]
      ];
+
+    [webView.mainFrame.windowObject evaluateWebScript:@""
+     "    var style = document.createElement('style');"
+     "    style.innerText = '* { font-family:\"san francisco display\"} ';"
+     "    document.head.appendChild(style);"
+     ];
+
   }
 }
 
